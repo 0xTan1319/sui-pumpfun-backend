@@ -7,10 +7,14 @@
     "dev": "nodemon ./index.js"
   },
   "dependencies": {
+    "@cetusprotocol/cetus-sui-clmm-sdk": "^5.1.10",
     "@metaplex-foundation/js": "^0.19.4",
+    "@mysten/sui": "^1.18.0",
+    "@mysten/sui.js": "^0.54.1",
     "@solana/web3.js": "^1.73.3",
     "axios": "^1.5.1",
     "bcrypt": "^5.1.1",
+    "bn.js": "^5.2.1",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
