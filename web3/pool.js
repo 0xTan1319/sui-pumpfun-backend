@@ -60,25 +60,25 @@ const startMigrate = async () => {
     
     tx.moveCall({
         target: `${BONDING_CONTRACT}::meme::start_migrate`,
-        arguments: [],
+        arguments: [adminCap, memeConfig, curveConfig],
     });
 
-    tx.moveCall({
-        target: `${BONDING_CONTRACT}::meme::delete_or_return`,
-        arguments: [],
-    });
-
-    
-    tx.moveCall({
-        target: `${BONDING_CONTRACT}::meme::delete_or_return`,
-        arguments: [],
-    });
+    // tx.moveCall({
+    //     target: `${BONDING_CONTRACT}::meme::delete_or_return`,
+    //     arguments: [],
+    // });
 
     
-    tx.moveCall({
-        target: `${BONDING_CONTRACT}::meme::complete_migrate`,
-        arguments: [],
-    });
+    // tx.moveCall({
+    //     target: `${BONDING_CONTRACT}::meme::delete_or_return`,
+    //     arguments: [],
+    // });
+
+    
+    // tx.moveCall({
+    //     target: `${BONDING_CONTRACT}::meme::complete_migrate`,
+    //     arguments: [],
+    // });
 
     const result = await client.signAndExecuteTransaction({
         signer: adminKeypair,
@@ -105,21 +105,21 @@ const createPool = async () => {
   
     const payload = await sdk.Pool.createPoolTransactionPayload({
       tick_spacing: 200,
-      initialize_sqrt_price: '1844674407370955160',
+      initialize_sqrt_price: '5830951894846676784',
       uri: '',
       fix_amount_a: true,
       amount_a: '10',
       amount_b: '1',
       coinTypeA: '0xa1ec7fc00a6f40db9693ad1415d0c193ad3906494428cf252621037bd7117e29::usdc::USDC',
-      coinTypeB: '0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI',
+      coinTypeB: '0x5f2bb14a10471d73d31dd2aea0fa2c1e65e05d70b94dd1f62a11023c8c41149e::horse::HORSE',
       slippage: 0.005,
       metadata_a: '0x5a2d9b8a2cbea39a2ce6186a31031496dd02b3b3eef59b7962bd3e2f6ddd988f',
-      metadata_b: '0x587c29de216efd4219573e08a1f6964d4fa7cb714518c2c8a0f29abfa264327d',
+      metadata_b: '0xc8dfad5dbe1fe99a5119c36919f8d47bdbe637d80d9c143a1e1d564f259fed7f',
       tick_lower: -440000,
       tick_upper: 440000,
     })
   
-    const cPrice = TickMath.sqrtPriceX64ToPrice(new BN('1844674407370955160'), 9, 6)
+    const cPrice = TickMath.sqrtPriceX64ToPrice(new BN('5830951894846676784'), 9, 6)
     console.log('🚀🚀🚀 ~ file: pool.test.ts:168 ~ test ~ cPrice:', cPrice.toString())
     printTransaction(payload)
     // const transferTxn = await sdk.fullClient.devInspectTransactionBlock({
