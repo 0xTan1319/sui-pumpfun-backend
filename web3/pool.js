@@ -120,7 +120,7 @@ const createPool = async () => {
     })
   
     const cPrice = TickMath.sqrtPriceX64ToPrice(new BN('5830951894846676784'), 9, 6)
-    console.log('🚀🚀🚀 ~ file: pool.test.ts:168 ~ test ~ cPrice:', cPrice.toString())
+    console.log('🚀🚀🚀 ~ file: ~ test ~ cPrice:', cPrice.toString())
     printTransaction(payload)
     // const transferTxn = await sdk.fullClient.devInspectTransactionBlock({
     //   transactionBlock: payload,
@@ -129,7 +129,7 @@ const createPool = async () => {
     const transferTxn = await sdk.fullClient.sendTransaction(adminKeypair, payload)
     console.log('doCreatPool: ', transferTxn)
   
-    console.log('🚀🚀🚀 ~ file: pool.test.ts:168 ~ test ~ transferTxn:', transferTxn)
+    console.log('🚀🚀🚀 ~ file: ~ test ~ transferTxn:', transferTxn)
   }catch(err) {
     console.log(err)
   }
